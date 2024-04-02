@@ -42,14 +42,14 @@ export default function Search(props) {
         </h1>
 
         <p className={styles.description}>
-          View your favorite Pokemon below.
+          View your saved words below.
         </p>
 
         <div className={styles.grid}>
           {props.isLoggedIn ? (
             <>
               <Link href="/search" className={styles.card}>
-                <h2>Search for Pokemon &rarr;</h2>
+                <h2>Search for words &rarr;</h2>
               </Link>
             </>
           ) : (

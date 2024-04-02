@@ -28,16 +28,23 @@ export default function Search(props) {
   const router = useRouter();
   const logout = useLogout();
   const [query, setQuery] = useState("");
+  const [wordData, setWordData] = useState(null);
   async function handleSubmit(e) {
     e.preventDefault()
     if (!query.trim()) return
+    try {
     const res = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${query}`
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${query}`
       )
-      const pokeData = await res.json()
-      console.log(pokeData)
+      const wordData = await res.json()
+      console.log(wordData)
       if (res.status !== 200) return
-    router.replace(router.pathname + `?q=${query}`)
+      router.replace(router.pathname + `?q=${query}`)
+      setWordData(wordData)
+    } catch (error)
+    {
+      console.error('Error fetching data:', error);
+    }
   }
   return (
     <div className={styles.container}>
@@ -56,14 +63,24 @@ export default function Search(props) {
 
         <p className={styles.description}>
         <form onSubmit={handleSubmit} className={styles.form}>
-        <label>Search for Pokemon!</label>
+        <label>Search for words!</label>
         <input
           value={query}
           onChange={e => setQuery(e.target.value)}
           type="text"
-          name="pokemon-search"/>
+          name="word-search"/>
         <button type="submit">Submit</button>
       </form>
+      {wordData && wordData.length > 0 && (
+  <div>
+    {wordData.map((word, index) => (
+      <div key={index}>
+        <h2>{word.word}</h2>
+        <p>{word.meanings[0].definitions[0].definition}</p>
+      </div>
+    ))}
+  </div>
+)}
     </p>
 
 
