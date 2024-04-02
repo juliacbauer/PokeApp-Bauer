@@ -63,7 +63,7 @@ export default function Search(props) {
 
         <p className={styles.description}>
         <form onSubmit={handleSubmit} className={styles.form}>
-        <label>Search for words!</label>
+        <label>Welcome to Prose Pal! Search for words!</label>
         <input
           value={query}
           onChange={e => setQuery(e.target.value)}
