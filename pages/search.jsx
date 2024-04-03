@@ -8,6 +8,7 @@ import styles from "../styles/Home.module.css";
 import Header from "../components/header";
 import useLogout from "../hooks/useLogout";
 import { useState } from "react";
+import WordDisplay from "../components/header/WordDisplay";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
@@ -61,7 +62,6 @@ export default function Search(props) {
           This is the Search Page!
         </h1>
 
-        <p className={styles.description}>
         <form onSubmit={handleSubmit} className={styles.form}>
         <label>Welcome to Prose Pal! Search for words!</label>
         <input
@@ -74,14 +74,12 @@ export default function Search(props) {
       {wordData && wordData.length > 0 && (
   <div>
     {wordData.map((word, index) => (
-      <div key={index}>
-        <h2>{word.word}</h2>
-        <p>{word.meanings[0].definitions[0].definition}</p>
-      </div>
-    ))}
+        <div key={index}>
+          <WordDisplay word={word} />
+        </div>
+      ))}
   </div>
 )}
-    </p>
 
 
         <div className={styles.grid}>
