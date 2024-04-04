@@ -21,6 +21,7 @@ export default function WordDisplay({ word }) {
           </li>
         ))}
       </ul>
+      <button>Add to Favorites</button>
       </div>
     );
   }
