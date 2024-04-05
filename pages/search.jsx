@@ -61,7 +61,7 @@ export default function Search(props) {
         <h1 className={styles.title}>
           This is the Search Page!
         </h1>
-
+<br />
         <form onSubmit={handleSubmit} className={styles.form}>
         <label>Welcome to Prose Pal! Search for words!</label>
         <input
@@ -72,7 +72,7 @@ export default function Search(props) {
         <button type="submit">Submit</button>
       </form>
       {wordData && wordData.length > 0 && (
-  <div>
+  <div className={styles.wordSearchInfo}>
     {wordData.map((word, index) => (
         <div key={index}>
           <WordDisplay word={word} />

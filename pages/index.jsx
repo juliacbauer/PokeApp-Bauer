@@ -38,7 +38,7 @@ export default function Home(props) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to Prose Pal!
         </h1>
 
         <p className={styles.description}>
@@ -53,8 +53,8 @@ export default function Home(props) {
         <div className={styles.grid}>
           {props.isLoggedIn ? (
             <>
-              <Link href="/dashboard" className={styles.card}>
-                <h2>Dashboard &rarr;</h2>
+              <Link href="/search" className={styles.card}>
+                <h2>Word Search &rarr;</h2>
                 <p>This page is only visible if you are logged in.</p>
               </Link>
               <div
