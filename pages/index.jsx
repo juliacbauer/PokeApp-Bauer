@@ -55,16 +55,8 @@ export default function Home(props) {
             <>
               <Link href="/search" className={styles.card}>
                 <h2>Word Search &rarr;</h2>
-                <p>This page is only visible if you are logged in.</p>
+                <p>Search for words!</p>
               </Link>
-              <div
-                onClick={logout}
-                style={{ cursor: "pointer" }}
-                className={styles.card}
-              >
-                <h2>Logout &rarr;</h2>
-                <p>Click here to log out.</p>
-              </div>
             </>
           ) : (
             <>

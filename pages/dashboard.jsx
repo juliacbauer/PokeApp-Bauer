@@ -38,7 +38,7 @@ export default function Dashboard(props) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to a <a href="https://nextjs.org">Next.js!</a> Dashboard Page!
+          Welcome to a Prose Pal!
         </h1>
 
         <p className={styles.description}>
