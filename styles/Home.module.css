@@ -13,13 +13,13 @@
   justify-content: center;
   align-items: center;
   background: #e4effd;
+  border-radius: 20px;
 }
 
 .footer {
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #e4effd;
   justify-content: center;
   align-items: center;
 }
