@@ -6,7 +6,6 @@ import { withIronSessionSsr } from "iron-session/next";
 import sessionOptions from "../config/session";
 import styles from "../styles/Home.module.css";
 import Header from "../components/header";
-import useLogout from "../hooks/useLogout";
 import { useState } from "react";
 import WordDisplay from "../components/header/WordDisplay";
 
@@ -27,7 +26,6 @@ export const getServerSideProps = withIronSessionSsr(
 
 export default function Search(props) {
   const router = useRouter();
-  const logout = useLogout();
   const [query, setQuery] = useState("");
   const [wordData, setWordData] = useState(null);
   async function handleSubmit(e) {
@@ -39,12 +37,15 @@ export default function Search(props) {
       )
       const wordData = await res.json()
       console.log(wordData)
-      if (res.status !== 200) return
+      if (res.status === 404) {
+      router.replace(router.pathname + `?q=${query}`)
+      setWordData([]);
+    } else if (res.status == 200){ 
       router.replace(router.pathname + `?q=${query}`)
       setWordData(wordData)
-    } catch (error)
-    {
-      console.error('Error fetching data:', error);
+    }
+    } catch (error) {
+      console.error("Error fetching data:", error);
     }
   }
   return (
@@ -61,9 +62,11 @@ export default function Search(props) {
         <h1 className={styles.title}>
           This is the Search Page!
         </h1>
-<br />
+
+        <br />
+
         <form onSubmit={handleSubmit} className={styles.form}>
-        <label>Welcome to Prose Pal! Search for words!</label>
+        <label className={styles.wordSearchInfo}>Welcome to Prose Pal! Search for words!</label>
         <input
           value={query}
           onChange={e => setQuery(e.target.value)}
@@ -71,16 +74,19 @@ export default function Search(props) {
           name="word-search"/>
         <button type="submit">Submit</button>
       </form>
-      {wordData && wordData.length > 0 && (
-  <div className={styles.wordSearchInfo}>
-    {wordData.map((word, index) => (
-        <div key={index}>
-          <WordDisplay word={word} />
-        </div>
-      ))}
-  </div>
-)}
 
+      {wordData !== null ? (
+       wordData.length > 0 ? (
+         <div className={styles.wordSearchInfo}>
+          {wordData.map((word, index) => (
+          <div key={index}>
+          <WordDisplay word={word} />
+          </div>
+          ))}
+        </div>
+        ) : (
+          <div className={styles.wordSearchInfo}>No words found.</div>
+        )) : null}
 
         <div className={styles.grid}>
           {props.isLoggedIn ? (
