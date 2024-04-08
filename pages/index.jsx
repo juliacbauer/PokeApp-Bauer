@@ -37,18 +37,16 @@ export default function Home(props) {
       <Header isLoggedIn={props.isLoggedIn} username={props?.user?.username} />
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to Prose Pal!
-        </h1>
+        <h1 className={styles.welcomeTitle}>
+          Welcome to 
+          </h1>
+          <h1 className={styles.logoTitle}>Prose Pal!</h1>
+    
 
-        <p className={styles.description}>
-          Current Location: <code className={styles.code}>{router.asPath}</code>
-          <br />
-          Status:{" "}
-          <code className={styles.code}>
-            {!props.isLoggedIn && " Not"} Logged In
-          </code>
-        </p>
+
+        <div className={styles.appDescription}>
+          Description of app goes here...
+        </div>
 
         <div className={styles.grid}>
           {props.isLoggedIn ? (
@@ -60,14 +58,12 @@ export default function Home(props) {
             </>
           ) : (
             <>
-              <Link href="/login" className={styles.card}>
+              <Link href="/login" className={styles.homeButtons}>
                 <h2>Login &rarr;</h2>
-                <p>Visit the login page.</p>
               </Link>
 
-              <Link href="/signup" className={styles.card}>
-                <h2>Create Account &rarr;</h2>
-                <p>Create an account.</p>
+              <Link href="/signup" className={styles.homeButtons}>
+                <h2>Sign up &rarr;</h2>
               </Link>
             </>
           )}
