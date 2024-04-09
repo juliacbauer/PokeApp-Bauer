@@ -1,0 +1,1 @@
+//button "trigger" functions - add and remove onclick per each word
