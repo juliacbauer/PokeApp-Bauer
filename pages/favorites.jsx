@@ -23,7 +23,7 @@ export const getServerSideProps = withIronSessionSsr(
   sessionOptions
 );
 
-export default function Search(props) {
+export default function Favorites(props) {
   const router = useRouter();
   const logout = useLogout();
   return (

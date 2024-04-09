@@ -1,5 +1,6 @@
 import { Schema, model, models } from 'mongoose'
 import bcrypt from 'bcrypt'
+import wordSchema from './word'
 
 const UserSchema = new Schema({
   username: {
@@ -13,7 +14,7 @@ const UserSchema = new Schema({
     minLength: 5,
     maxLength: 200
   },
-  //vocabularyList: [wordSchema]
+  vocabularyList: [wordSchema]
 })
 
 // hashes the password before it's stored in mongo
