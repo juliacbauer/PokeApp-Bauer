@@ -42,7 +42,8 @@ export default function Home(props) {
           Welcome to 
         </h1>
         <h1 className={styles.logoTitle}>Prose Pal!</h1>
-    <br />
+        <br />
+
         <p className={styles.appDescription}>
           Prose Pal is an app designed to help avid readers and writers discover and track words.
           Readers and writers are constantly coming across new words that may pique their 
@@ -55,7 +56,8 @@ export default function Home(props) {
           remember a word for later, you can add it to your vocabulary list and view its definitions,
           synoyms, and more later.
         </p>
-<br />
+        
+        <br />
         <br />
 
         <div className={styles.grid}>

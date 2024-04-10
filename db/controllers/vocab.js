@@ -13,6 +13,7 @@ export async function getVocab(userId) {
   }
 
 //add word to vocab list
+//make sure to not be able to add duplicates?
 export async function addWord(userId, word) {
     await dbConnect()
     const user = await User.findByIdAndUpdate(

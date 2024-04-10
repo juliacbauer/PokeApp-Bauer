@@ -24,26 +24,11 @@ export const getServerSideProps = withIronSessionSsr(
   sessionOptions
 );
 
-//add async onclick button function for add to vocab...?
-
-//async function addToVocab(e) {
-  //e.preventDefault()
-  //const res = await fetch('/api/word', {
-    //method:'POST',
-    //headers: {
-      //"content-type": "application/json"
-    //}, 
-    //body: JSON.stringify(word?)
-  //})
-  //if (res.status === 200) {
-    //router.replace(router.asPath)
-  //}
-//}
-
 export default function Search(props) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [wordData, setWordData] = useState(null);
+  const [selectedWord, setSelectedWord] = useState(null);
   async function handleSubmit(e) {
     e.preventDefault()
     if (!query.trim()) return
@@ -64,6 +49,34 @@ export default function Search(props) {
       console.error("Error fetching data:", error);
     }
   }
+
+//add async onclick button function for add to vocab...?
+//getting 400 bad request
+async function addToVocab( word) {
+  try {
+    const res = await fetch('/api/word', {
+      method:'POST',
+      headers: {
+        "content-type": "application/json"
+      }, 
+      body: JSON.stringify(word)
+    })
+    if (res.status === 200) {
+      router.replace(router.asPath)
+    }
+  } catch (error) {
+    return res.status(400).json({error: error.message})
+  }
+}
+
+//console logging wordData from search on button click
+//also triggering route POST request
+async function addWord(word) {
+  setSelectedWord(wordData);
+  console.log("Word added to vocabulary:", word);
+  await addToVocab(word)
+}
+
   return (
     <div className={styles.container}>
       <Head>
@@ -90,18 +103,20 @@ export default function Search(props) {
           <br />
         <button type="submit">Submit</button>
       </form>
+
       <br />
 
       {wordData !== null ? (
        wordData.length > 0 ? (
-         <div>
+        <div>
           {wordData.map((word, index) => (
           <div key={index}>
-          <WordDisplay word={word} />
+            <WordDisplay word={word} />
           </div>
           ))}
           <div className={styles.buttonContainer}>
-          <button /*onClick={addToVocab}*/ className={styles.otherButtons}>Add to Vocabulary</button>
+            <button onClick={() => addWord(selectedWord)} 
+            className={styles.otherButtons}>Add to Vocabulary</button>
           </div>
         </div>
         ) : (

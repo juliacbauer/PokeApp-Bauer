@@ -36,37 +36,25 @@ export default function Dashboard(props) {
 
       <Header isLoggedIn={props.isLoggedIn} username={props.user.username} />
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to a Prose Pal!
+      <main className={styles.homePage}>
+
+      <br />
+      
+        <h1 className={styles.welcomeTitle}>
+          Welcome, {props.user.username}!
         </h1>
 
-        <p className={styles.description}>
-          Current Location: <code className={styles.code}>{router.asPath}</code>
-          <br />
-          Status:{" "}
-          <code className={styles.code}>
-            {!props.isLoggedIn && " Not"} Logged In
-          </code>
+        <p className={styles.appDescription}>
+          Start searching for words!
         </p>
 
-        <p className={styles.description}>
-          This page is only visible if you are logged in.
-        </p>
+      <br />
+      <br />
 
         <div className={styles.grid}>
-          <Link href="/" className={styles.card}>
-            <h2>Home &rarr;</h2>
-            <p>Return to the homepage.</p>
+          <Link href="/search" className={styles.card}>
+            <h2>Word Search &rarr;</h2>
           </Link>
-          <div
-            onClick={logout}
-            style={{ cursor: "pointer" }}
-            className={styles.card}
-          >
-            <h2>Logout &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </div>
         </div>
       </main>
 
