@@ -159,7 +159,7 @@
 }
 
 .buttonContainer {
-  display: flex; /* Use flexbox */
+  display: flex;
   justify-content: center;
 }
 
