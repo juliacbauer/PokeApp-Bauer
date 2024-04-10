@@ -101,7 +101,7 @@ export default function Search(props) {
           </div>
           ))}
           <div className={styles.buttonContainer}>
-          <button /*onClick={addToFavorites}*/ className={styles.otherButtons}>Add to Vocabulary</button>
+          <button /*onClick={addToVocab}*/ className={styles.otherButtons}>Add to Vocabulary</button>
           </div>
         </div>
         ) : (
