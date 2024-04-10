@@ -17,7 +17,7 @@ export default function Header(props) {
             <Link href="/search">Search</Link>
             </p>
             <p>
-            <Link href="/favorites">Favorites</Link>
+            <Link href="/vocabulary">Vocabulary</Link>
             </p>
             <p onClick={logout} style={{ cursor: "pointer" }}>
               Logout

@@ -7,7 +7,7 @@ import sessionOptions from "../config/session";
 import styles from "../styles/Home.module.css";
 import Header from "../components/header";
 import { useState } from "react";
-import WordDisplay from "../components/header/WordDisplay";
+import WordDisplay from "../components/WordDisplay";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
@@ -23,6 +23,22 @@ export const getServerSideProps = withIronSessionSsr(
   },
   sessionOptions
 );
+
+//add async onclick button function for add to vocab...?
+
+//async function addToVocab(e) {
+  //e.preventDefault()
+  //const res = await fetch('/api/word', {
+    //method:'POST',
+    //headers: {
+      //"content-type": "application/json"
+    //}, 
+    //body: JSON.stringify(word?)
+  //})
+  //if (res.status === 200) {
+    //router.replace(router.asPath)
+  //}
+//}
 
 export default function Search(props) {
   const router = useRouter();
@@ -85,7 +101,7 @@ export default function Search(props) {
           </div>
           ))}
           <div className={styles.buttonContainer}>
-          <button className={styles.otherButtons}>Add to Favorites</button>
+          <button /*onClick={addToFavorites}*/ className={styles.otherButtons}>Add to Vocabulary</button>
           </div>
         </div>
         ) : (
@@ -98,8 +114,8 @@ export default function Search(props) {
         <div className={styles.grid}>
           {props.isLoggedIn ? (
             <>
-              <Link href="/favorites" className={styles.card}>
-                <h2>View Your Favorites! &rarr;</h2>
+              <Link href="/vocabulary" className={styles.card}>
+                <h2>My Vocabulary! &rarr;</h2>
               </Link>
             </>
           ) : (

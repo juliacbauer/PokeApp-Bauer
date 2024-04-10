@@ -7,10 +7,12 @@ import sessionOptions from "../config/session";
 import styles from "../styles/Home.module.css";
 import Header from "../components/header";
 import useLogout from "../hooks/useLogout";
+//import db from "../db";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
     const user = req.session.user;
+    //const vocabulary = await db.word.getVocab(user.id)
     const props = {};
     if (user) {
       props.user = req.session.user;
@@ -18,12 +20,20 @@ export const getServerSideProps = withIronSessionSsr(
     } else {
       props.isLoggedIn = false;
     }
-    return { props };
+    return {
+        props //: {
+        //user: req.session.user,
+        //isLoggedIn: true,
+        //vocabularyList: vocab,
+      //}
+    };
   },
   sessionOptions
 );
 
-export default function Favorites(props) {
+//add async onclick button function for delete from vocab...?
+
+export default function Vocabulary(props) {
   const router = useRouter();
   const logout = useLogout();
   return (
@@ -44,6 +54,10 @@ export default function Favorites(props) {
         <br />
         <br />
 
+        {/*props.vocabularyList.length > 0 ? <VocabList vocab={props.vocabularyList} /> : 
+        //delete button in here some where? mapped with each word?
+        <p>No words in vocabulary list</p>*/}
+        
         <div className={styles.grid}>
           {props.isLoggedIn ? (
             <>
