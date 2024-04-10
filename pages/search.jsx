@@ -39,10 +39,10 @@ export default function Search(props) {
       const wordData = await res.json()
       console.log(wordData)
       if (res.status === 404) {
-      router.replace(router.pathname + `?q=${query}`)
+      //router.replace(router.pathname + `?q=${query}`)
       setWordData([]);
     } else if (res.status == 200){ 
-      router.replace(router.pathname + `?q=${query}`)
+      //router.replace(router.pathname + `?q=${query}`)
       setWordData(wordData)
     }
     } catch (error) {

@@ -3,7 +3,7 @@ import styles from "./style.module.css";
 export default function WordDisplay({ word }) {
     return (
       <div className={styles.wordInfo} key={word.id}>
-        <h2>{word.word}</h2>
+        <h2 style={{ textTransform: 'capitalize' }}>{word.word}</h2>
         <ul>
         {word.meanings.map((meaning, index) => (
           <li key={index}>
