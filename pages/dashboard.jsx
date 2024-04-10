@@ -52,7 +52,7 @@ export default function Dashboard(props) {
       <br />
 
         <div className={styles.grid}>
-          <Link href="/search" className={styles.card}>
+          <Link href="/search" className={styles.homeButtons}>
             <h2>Word Search &rarr;</h2>
           </Link>
         </div>

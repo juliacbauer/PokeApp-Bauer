@@ -61,18 +61,18 @@ export default function Vocabulary(props) {
         <div className={styles.grid}>
           {props.isLoggedIn ? (
             <>
-              <Link href="/search" className={styles.card}>
-                <h2>Search for words &rarr;</h2>
+              <Link href="/search" className={styles.homeButtons}>
+                <h2>Word Search &rarr;</h2>
               </Link>
             </>
           ) : (
             <>
-              <Link href="/login" className={styles.card}>
+              <Link href="/login" className={styles.homeButtons}>
                 <h2>Login &rarr;</h2>
                 <p>Visit the login page.</p>
               </Link>
 
-              <Link href="/signup" className={styles.card}>
+              <Link href="/signup" className={styles.homeButtons}>
                 <h2>Create Account &rarr;</h2>
                 <p>Create an account.</p>
               </Link>

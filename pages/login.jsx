@@ -62,17 +62,10 @@ export default function Login(props) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to the <a href="https://nextjs.org">Next.js</a> Login Page!
+          Login
         </h1>
-
-        <p className={styles.description}>
-          Current Location: <code className={styles.code}>{router.asPath}</code>
-          <br />
-          Status:{" "}
-          <code className={styles.code}>
-            {!props.isLoggedIn && " Not"} Logged In
-          </code>
-        </p>
+        <br />
+        <br />
 
         <form
           className={[styles.card, styles.form].join(" ")}
@@ -97,6 +90,7 @@ export default function Login(props) {
           <button>Login</button>
           {error && <p>{error}</p>}
         </form>
+        <br />
         <Link href="/signup">
           <p>Sign up instead?</p>
         </Link>

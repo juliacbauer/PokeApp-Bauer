@@ -63,7 +63,7 @@ export default function Home(props) {
         <div className={styles.grid}>
           {props.isLoggedIn ? (
             <>
-              <Link href="/search" className={styles.card}>
+              <Link href="/search" className={styles.homeButtons}>
                 <h2>Word Search &rarr;</h2>
               </Link>
             </>

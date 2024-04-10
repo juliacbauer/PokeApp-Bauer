@@ -54,7 +54,7 @@ export default function Search(props) {
 //getting 400 bad request
 async function addToVocab( word) {
   try {
-    const res = await fetch('/api/word', {
+    const res = await fetch('../api/word', {
       method:'POST',
       headers: {
         "content-type": "application/json"
@@ -129,20 +129,18 @@ async function addWord(word) {
         <div className={styles.grid}>
           {props.isLoggedIn ? (
             <>
-              <Link href="/vocabulary" className={styles.card}>
-                <h2>My Vocabulary! &rarr;</h2>
+              <Link href="/vocabulary" className={styles.homeButtons}>
+                <h2>My Vocab &rarr;</h2>
               </Link>
             </>
           ) : (
             <>
-              <Link href="/login" className={styles.card}>
+              <Link href="/login" className={styles.homeButtons}>
                 <h2>Login &rarr;</h2>
-                <p>Visit the login page.</p>
               </Link>
 
-              <Link href="/signup" className={styles.card}>
+              <Link href="/signup" className={styles.homeButtons}>
                 <h2>Create Account &rarr;</h2>
-                <p>Create an account.</p>
               </Link>
             </>
           )}

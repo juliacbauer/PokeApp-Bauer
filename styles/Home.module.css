@@ -1,4 +1,5 @@
-.main {
+.main,
+.homePage {
   min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
@@ -10,13 +11,6 @@
 }
 
 .homePage {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-image: url('../public/bg4.jpg');
   background-size: cover;
 }
@@ -74,13 +68,6 @@
   text-align: center;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-  color: #406898;
-}
-
 .appDescription {
   line-height: 1.2;
   font-size: 1.3rem;
@@ -88,19 +75,6 @@
   text-align: left;
   max-width: 680px;
 
-}
-
-.wordSearchInfo {
-  color: #406898;
-}
-
-.code {
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  color: #406898;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .grid {
@@ -115,9 +89,8 @@
   text-align: center;
   color: #e4effd;
   text-decoration: none;
-  background: #406898;
+  background: #779cca;
   border-radius: 10px;
-  transition: background-color 0.15s ease;
   max-width: 350px;
 }
 
@@ -132,21 +105,7 @@
   width: 200px;
 }
 
-.form > button {
-  cursor: pointer;
-  background-color: #406898;
-  transition: 0.15s ease;
-  color: #e4effd;
-  border-radius: 10px;
-  padding: 10px;
-  width: 200px;
-  border: none;
-}
-.form>button:is(:hover) {
-  color: #e4effd;
-  background-color: #3c94f9;
-}
-
+.form > button,
 .otherButtons {
   cursor: pointer;
   background-color: #406898;
@@ -158,30 +117,15 @@
   border: none;
 }
 
+.form>button:is(:hover),
+.otherButtons:is(:hover),
+.homeButtons:is(:hover) {
+  background-color: #4579b4
+}
+
 .buttonContainer {
   display: flex;
   justify-content: center;
-}
-
-.otherButtons:is(:hover) {
-  color: #e4effd;
-  background-color: #3c94f9;
-}
-
-
-.card:is(:hover) {
-  background-color: #3c94f9;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
 }
 
 .logo {
@@ -199,15 +143,21 @@
   padding-top: 5px;
   padding-bottom: 5px;
   transition: background-color 0.15s ease;
-  width: 150px;
+  width: 180px;
 }
 
 .homeButtons h2 {
   font-size: 1.2rem;
 }
 
-.homeButtons:is(:hover) {
-  background-color: #4579b4;
+@media (max-width: 750px) {
+  .appDescription {
+    max-width: 500px;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -219,7 +169,47 @@
 
   .appDescription {
     max-width: 400px;
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .appDescription {
+    max-width: 300px;
+  }
+
+  .welcomeTitle {
+    font-size: 2rem;
+  }
+
+  .logoTitle {
+    font-size: 3rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .appDescription {
+    max-width: 250px;
+    font-size: 1rem;
+  }
+
+  .welcomeTitle {
+    font-size: 1.8rem;
+  }
   
+  .logoTitle {
+    font-size: 3rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
   }
 }
 
