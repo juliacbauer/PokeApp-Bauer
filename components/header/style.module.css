@@ -2,4 +2,11 @@
   display: flex;
   justify-content: space-between;
   gap: 12px;
+  background-color: #406898;
+  color: #e4effd;
+  padding: .5rem;
+  align-items: center;
+  font-size: 1.1rem;
+  padding-left: 30px;
+  padding-right: 30px;
 }

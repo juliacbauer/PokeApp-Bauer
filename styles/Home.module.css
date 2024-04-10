@@ -1,9 +1,3 @@
-.container {
-  background: #27486d;
-  color: #e4effd;
-  padding: 1rem 0;
-}
-
 .main {
   min-height: 100vh;
   padding: 4rem 0;
@@ -12,16 +6,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('../public/bg1.jpg');
-  background-size: cover;
+  background-color: #e4effd;
+}
+
+.homePage {
+    min-height: 100vh;
+    padding: 4rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../public/bg4.jpg');
+    background-size: cover;
 }
 
 .footer {
   display: flex;
   flex: 1;
-  padding: 2rem 0;
+  padding: 2.5rem;
   justify-content: center;
   align-items: center;
+  background-color: #406898;
 }
 
 .footer a {
@@ -32,7 +38,7 @@
 }
 
 .title a {
-  color: #0070f3;
+  color: #406898;
   text-decoration: none;
 }
 
@@ -46,21 +52,21 @@
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
-  color: #27486d;
+  color: #406898;
 }
 
 .logoTitle {
   margin: 0;
   line-height: 1.15;
   font-size: 5rem;
-  color: #27486d;
+  color: #406898;
 }
 
 .welcomeTitle {
   margin: 0;
   line-height: 1.15;
   font-size: 2.5rem;
-  color: #27486d;
+  color: #406898;
 }
 
 .title,
@@ -72,26 +78,27 @@
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
-  color: #27486d;
+  color: #406898;
 }
 
 .appDescription {
-  margin: 3rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-  color: #27486d;
-  text-align: center;
+  line-height: 1.2;
+  font-size: 1.3rem;
+  color: #406898;
+  text-align: left;
+  max-width: 680px;
+
 }
 
 .wordSearchInfo {
-  color: #27486d;
+  color: #406898;
 }
 
 .code {
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
-  color: #27486d;
+  color: #406898;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
@@ -104,15 +111,13 @@
 }
 
 .card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
+  padding: 1.1rem;
+  text-align: center;
   color: #e4effd;
   text-decoration: none;
-  border: 3px solid #27486d;
-  background: #27486d;
+  background: #406898;
   border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: background-color 0.15s ease;
   max-width: 350px;
 }
 
@@ -124,24 +129,48 @@
 
 .form > * {
   margin-bottom: 10px;
+  width: 200px;
 }
 
 .form > button {
   cursor: pointer;
-  background-color: #27486d;
+  background-color: #406898;
   transition: 0.15s ease;
   color: #e4effd;
   border-radius: 10px;
   padding: 10px;
+  width: 200px;
+  border: none;
 }
 .form>button:is(:hover) {
   color: #e4effd;
   background-color: #3c94f9;
 }
 
+.otherButtons {
+  cursor: pointer;
+  background-color: #406898;
+  transition: 0.15s ease;
+  color: #e4effd;
+  border-radius: 10px;
+  padding: 10px;
+  width: 200px;
+  border: none;
+}
+
+.buttonContainer {
+  display: flex; /* Use flexbox */
+  justify-content: center;
+}
+
+.otherButtons:is(:hover) {
+  color: #e4effd;
+  background-color: #3c94f9;
+}
+
+
 .card:is(:hover) {
-  color: #3c94f9;
-  border-color: #3c94f9;
+  background-color: #3c94f9;
 }
 
 .card h2 {
@@ -165,7 +194,7 @@
   padding: 1rem;
   text-align: center;
   color: #e4effd;
-  background: #27486d;
+  background: #406898;
   border-radius: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -186,6 +215,11 @@
     width: 100%;
     flex-direction: column;
     align-items: center;
+  }
+
+  .appDescription {
+    max-width: 400px;
+  
   }
 }
 

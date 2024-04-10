@@ -1,0 +1,12 @@
+.wordInfo {
+    background-color: #406898;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 550px;
+    border-radius: 20px;
+    color: #e4effd;
+}
+
+.wordInfo ul li {
+    margin-bottom: 15px;
+  }

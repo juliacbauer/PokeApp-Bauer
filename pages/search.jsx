@@ -60,33 +60,40 @@ export default function Search(props) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          This is the Search Page!
+          Word Search
         </h1>
 
         <br />
 
         <form onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.wordSearchInfo}>Welcome to Prose Pal! Search for words!</label>
         <input
           value={query}
           onChange={e => setQuery(e.target.value)}
           type="text"
           name="word-search"/>
+          <br />
         <button type="submit">Submit</button>
       </form>
+      <br />
 
       {wordData !== null ? (
        wordData.length > 0 ? (
-         <div className={styles.wordSearchInfo}>
+         <div>
           {wordData.map((word, index) => (
           <div key={index}>
           <WordDisplay word={word} />
           </div>
           ))}
+          <div className={styles.buttonContainer}>
+          <button className={styles.otherButtons}>Add to Favorites</button>
+          </div>
         </div>
         ) : (
           <div className={styles.wordSearchInfo}>No words found.</div>
         )) : null}
+
+        <br />
+        <br />
 
         <div className={styles.grid}>
           {props.isLoggedIn ? (

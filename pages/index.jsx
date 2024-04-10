@@ -36,24 +36,33 @@ export default function Home(props) {
 
       <Header isLoggedIn={props.isLoggedIn} username={props?.user?.username} />
 
-      <main className={styles.main}>
+      <main className={styles.homePage}>
+        <br />
         <h1 className={styles.welcomeTitle}>
           Welcome to 
-          </h1>
-          <h1 className={styles.logoTitle}>Prose Pal!</h1>
-    
-
-
-        <div className={styles.appDescription}>
-          Description of app goes here...
-        </div>
+        </h1>
+        <h1 className={styles.logoTitle}>Prose Pal!</h1>
+    <br />
+        <p className={styles.appDescription}>
+          Prose Pal is an app designed to help avid readers and writers discover and track words.
+          Readers and writers are constantly coming across new words that may pique their 
+          interest in one way or another – even if it's by making them think, "What does 
+          that word mean?"
+        </p>
+        <p className={styles.appDescription}>
+          With Prose Pal, you can search for words and learn about their meanings, definitions,
+          and parts of speech. You can also view their synonyms and antonyms! If you want to
+          remember a word for later, you can add it to your vocabulary list and view its definitions,
+          synoyms, and more later.
+        </p>
+<br />
+        <br />
 
         <div className={styles.grid}>
           {props.isLoggedIn ? (
             <>
               <Link href="/search" className={styles.card}>
                 <h2>Word Search &rarr;</h2>
-                <p>Search for words!</p>
               </Link>
             </>
           ) : (
@@ -68,6 +77,7 @@ export default function Home(props) {
             </>
           )}
         </div>
+        <br />
       </main>
 
       <footer className={styles.footer}>

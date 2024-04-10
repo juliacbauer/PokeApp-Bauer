@@ -38,12 +38,11 @@ export default function Favorites(props) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          This is the Favorites Page!
+          My Vocabulary
         </h1>
 
-        <p className={styles.description}>
-          View your saved words below.
-        </p>
+        <br />
+        <br />
 
         <div className={styles.grid}>
           {props.isLoggedIn ? (
