@@ -28,7 +28,7 @@ export default withIronSessionApiRoute(
         try {
         //delete word from vocab list
           const word = JSON.parse(req.body)
-          const deletedWord = await db.book.remove(req.session.user.id, word.id)
+          const deletedWord = await db.word.remove(req.session.user.id, word.id)
           if(deletedWord === null) {
             req.session.destroy()
             return res.status(401)

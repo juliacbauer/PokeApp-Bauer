@@ -55,7 +55,7 @@ async function addToVocab(e) {
   e.preventDefault()
   //console logging displayed word search data onclick
   console.log("Word added to vocabulary:", wordData);
-    const res = await fetch('../api/word', {
+    const res = await fetch('/api/word', {
       method:'POST',
       headers: {
         "content-type": "application/json"
