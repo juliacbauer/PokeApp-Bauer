@@ -52,8 +52,10 @@ export default function Search(props) {
 
 //add async onclick button function for add to vocab...?
 //getting 400 bad request
-async function addToVocab( word) {
-  try {
+async function addToVocab(e, word) {
+  e.preventDefault()
+  //console logging displayed word search data onclick
+  console.log("Word added to vocabulary:", wordData);
     const res = await fetch('../api/word', {
       method:'POST',
       headers: {
@@ -64,17 +66,6 @@ async function addToVocab( word) {
     if (res.status === 200) {
       router.replace(router.asPath)
     }
-  } catch (error) {
-    return res.status(400).json({error: error.message})
-  }
-}
-
-//console logging wordData from search on button click
-//also triggering route POST request
-async function addWord(word) {
-  setSelectedWord(wordData);
-  console.log("Word added to vocabulary:", word);
-  await addToVocab(word)
 }
 
   return (
@@ -115,7 +106,7 @@ async function addWord(word) {
           </div>
           ))}
           <div className={styles.buttonContainer}>
-            <button onClick={() => addWord(selectedWord)} 
+            <button onClick={addToVocab} 
             className={styles.otherButtons}>Add to Vocabulary</button>
           </div>
         </div>
