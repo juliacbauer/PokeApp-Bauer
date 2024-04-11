@@ -28,7 +28,6 @@ export default function Search(props) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [wordData, setWordData] = useState(null);
-  const [selectedWord, setSelectedWord] = useState(null);
   async function handleSubmit(e) {
     e.preventDefault()
     if (!query.trim()) return
@@ -52,7 +51,7 @@ export default function Search(props) {
 
 //add async onclick button function for add to vocab...?
 //getting 400 bad request
-async function addToVocab(e, word) {
+async function addToVocab(e) {
   e.preventDefault()
   //console logging displayed word search data onclick
   console.log("Word added to vocabulary:", wordData);
@@ -61,7 +60,7 @@ async function addToVocab(e, word) {
       headers: {
         "content-type": "application/json"
       }, 
-      body: JSON.stringify(word)
+      body: JSON.stringify(wordData)
     })
     if (res.status === 200) {
       router.replace(router.asPath)
