@@ -46,7 +46,7 @@ export default function Vocabulary(props) {
 
       <Header isLoggedIn={props.isLoggedIn} username={props?.user?.username} />
 
-      <main className={styles.main}>
+      <main className={styles.searchPage}>
         <h1 className={styles.title}>
           My Vocabulary
         </h1>
@@ -57,6 +57,9 @@ export default function Vocabulary(props) {
         {/*props.vocabularyList.length > 0 ? <VocabList vocab={props.vocabularyList} /> : 
         //delete button in here some where? mapped with each word?
         <p>No words in vocabulary list</p>*/}
+
+        {/*if no vocab words, display message saying visit word search to add words
+        to your vocab */}
         
         <div className={styles.grid}>
           {props.isLoggedIn ? (

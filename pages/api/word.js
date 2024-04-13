@@ -14,7 +14,7 @@ export default withIronSessionApiRoute(
       case 'POST':
         //add word to vocab list
         try {
-          const word = JSON.parse(req.body)
+          const word = req.body
           const addedWord = await db.word.add(req.session.user.id, word)
           if(addedWord === null) {
             req.session.destroy() 

@@ -28,6 +28,7 @@ export default function Search(props) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [wordData, setWordData] = useState(null);
+  const [showMoreStates, setShowMoreStates] = useState({});
   async function handleSubmit(e) {
     e.preventDefault()
     if (!query.trim()) return
@@ -43,6 +44,7 @@ export default function Search(props) {
     } else if (res.status == 200){ 
       //router.replace(router.pathname + `?q=${query}`)
       setWordData(wordData)
+      setShowMoreStates({});
     }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -67,6 +69,11 @@ async function addToVocab(e) {
     }
 }
 
+//to close show more info with next search
+function clearWordData() {
+  setWordData(null);
+}
+
   return (
     <div className={styles.container}>
       <Head>
@@ -77,7 +84,7 @@ async function addToVocab(e) {
 
       <Header isLoggedIn={props.isLoggedIn} username={props?.user?.username} />
 
-      <main className={styles.main}>
+      <main className={styles.searchPage}>
         <h1 className={styles.title}>
           Word Search
         </h1>
@@ -91,7 +98,7 @@ async function addToVocab(e) {
           type="text"
           name="word-search"/>
           <br />
-        <button type="submit">Submit</button>
+        <button type="submit" onClick={clearWordData}>Submit</button>
       </form>
 
       <br />
@@ -101,7 +108,7 @@ async function addToVocab(e) {
         <div>
           {wordData.map((word, index) => (
           <div key={index}>
-            <WordDisplay word={word} />
+            <WordDisplay word={word}/>
           </div>
           ))}
           <div className={styles.buttonContainer}>
