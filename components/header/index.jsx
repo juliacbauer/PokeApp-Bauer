@@ -9,7 +9,7 @@ export default function Header(props) {
       {props.isLoggedIn ? (
         <>
           <p>
-            <Link href="/">Home</Link>
+            <Link href="/" className={styles.logo}>[Prose_Pal]</Link>
           </p>
           <div className={styles.container}>
             <p>Welcome, {props.username}!</p>

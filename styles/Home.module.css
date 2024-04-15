@@ -10,8 +10,15 @@
   background-color: #e4effd;
 }
 
+/*Need to change horizontal align and search bar width for mobile*/
+
+@font-face {
+  font-family: "pencil";
+  src: url('../public/Pencilized Demo.ttf');
+}
+
 .homePage {
-  background-image: url('../public/bg4.jpg');
+  background-image: url('../public/bg5.jpeg');
   background-size: cover;
 }
 
@@ -23,6 +30,7 @@
   flex-direction: column;
   align-items: center;
   background-color: #e4effd;
+  padding-top: 120px;
 }
 
 .footer {
@@ -31,6 +39,7 @@
   padding: 2.5rem;
   justify-content: center;
   align-items: center;
+  color: #e4effd;
   background-color: #406898;
 }
 
@@ -64,6 +73,7 @@
   line-height: 1.15;
   font-size: 5rem;
   color: #406898;
+  font-family: "pencil";
 }
 
 .welcomeTitle {
@@ -80,10 +90,11 @@
 
 .appDescription {
   line-height: 1.2;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: 500;
   color: #406898;
   text-align: left;
-  max-width: 680px;
+  max-width: 730px;
 
 }
 
@@ -160,12 +171,15 @@
   font-size: 1.2rem;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 770px) {
   .appDescription {
-    max-width: 500px;
+    max-width: 550px;
   }
 
   .title {
+    font-size: 3.5rem;
+  }
+  .logoTitle {
     font-size: 3.5rem;
   }
 }
@@ -179,6 +193,7 @@
 
   .appDescription {
     max-width: 400px;
+    font-size: 1.1rem;
   }
 
   .title {
@@ -189,6 +204,7 @@
 @media (max-width: 450px) {
   .appDescription {
     max-width: 300px;
+    font-size: .8rem;
   }
 
   .welcomeTitle {
@@ -204,10 +220,16 @@
   }
 }
 
+@media (max-width: 450px) {
+  .logoTitle {
+    font-size: 2.8rem;
+  }
+}
+
 @media (max-width: 350px) {
   .appDescription {
     max-width: 250px;
-    font-size: 1rem;
+    font-size: .7rem;
   }
 
   .welcomeTitle {
@@ -215,12 +237,28 @@
   }
   
   .logoTitle {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .title {
     font-size: 1.5rem;
   }
+}
+
+@media (max-width: 300px) {
+  .appDescription {
+    max-width: 200px;
+    font-size: .6rem;
+  }
+  
+  .welcomeTitle {
+    font-size: 1.3rem;
+  }
+
+  .logoTitle {
+    font-size: 2.2rem;
+  }
+
 }
 
 @media (prefers-color-scheme: dark) {

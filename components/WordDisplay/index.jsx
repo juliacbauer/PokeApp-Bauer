@@ -35,6 +35,7 @@ export default function WordDisplay({ word }) {
               </li>
             ))}
           </ul>
+          <br />
           <button className={styles.button} onClick={() => setShowMore(false)}>Show Less</button>
         </div>
       )}

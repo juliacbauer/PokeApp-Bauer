@@ -41,7 +41,8 @@ export default function Home(props) {
         <h1 className={styles.welcomeTitle}>
           Welcome to 
         </h1>
-        <h1 className={styles.logoTitle}>Prose Pal!</h1>
+        <br />
+        <h1 className={styles.logoTitle}>[Prose_Pal]</h1>
         <br />
 
         <p className={styles.appDescription}>
@@ -53,11 +54,9 @@ export default function Home(props) {
         <p className={styles.appDescription}>
           With Prose Pal, you can search for words and learn about their meanings, definitions,
           and parts of speech. You can also view their synonyms and antonyms! If you want to
-          remember a word for later, you can add it to your vocabulary list and view its definitions,
-          synoyms, and more later.
+          save a word, you can add it to your vocabulary list and view its definitions and more later.
         </p>
         
-        <br />
         <br />
 
         <div className={styles.grid}>

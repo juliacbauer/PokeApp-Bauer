@@ -88,6 +88,10 @@ function clearWordData() {
         <h1 className={styles.title}>
           Word Search
         </h1>
+        <br />
+        <p className={styles.appDescription}>
+          Search for words to add to your vocabulary list!
+        </p>
 
         <br />
 

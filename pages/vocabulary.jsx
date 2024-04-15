@@ -52,6 +52,10 @@ export default function Vocabulary(props) {
         </h1>
 
         <br />
+        <p className={styles.appDescription}>
+          View your saved words below.
+        </p>
+
         <br />
 
         {/*props.vocabularyList.length > 0 ? <VocabList vocab={props.vocabularyList} /> : 
