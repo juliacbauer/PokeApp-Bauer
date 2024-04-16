@@ -10,8 +10,6 @@
   background-color: #e4effd;
 }
 
-/*Need to change horizontal align and search bar width for mobile*/
-
 @font-face {
   font-family: "pencil";
   src: url('../public/Pencilized Demo.ttf');
@@ -88,7 +86,8 @@
   text-align: center;
 }
 
-.appDescription {
+.appDescription,
+.searchDescription {
   line-height: 1.2;
   font-size: 1.5rem;
   font-weight: 500;
@@ -136,6 +135,7 @@
   padding: 10px;
   width: 200px;
   border: none;
+  font-family: "louis geo";
 }
 
 .form>button:is(:hover),
@@ -172,7 +172,8 @@
 }
 
 @media (max-width: 770px) {
-  .appDescription {
+  .appDescription, 
+  .searchDescription {
     max-width: 550px;
   }
 
@@ -181,6 +182,10 @@
   }
   .logoTitle {
     font-size: 3.5rem;
+  }
+
+  .homePage{
+    min-height: 90vh;
   }
 }
 
@@ -191,9 +196,13 @@
     align-items: center;
   }
 
-  .appDescription {
-    max-width: 400px;
+  .appDescription,
+  .searchDescription {
+    max-width: 420px;
     font-size: 1.1rem;
+  }
+  .homePage{
+    min-height: 90vh;
   }
 
   .title {
@@ -202,9 +211,10 @@
 }
 
 @media (max-width: 450px) {
-  .appDescription {
-    max-width: 300px;
-    font-size: .8rem;
+  .appDescription,
+  .searchDescription {
+    max-width: 350px;
+    font-size: 1rem;
   }
 
   .welcomeTitle {
@@ -220,16 +230,15 @@
   }
 }
 
-@media (max-width: 450px) {
-  .logoTitle {
-    font-size: 2.8rem;
+@media (max-width: 370px) {
+  .appDescription,
+  .searchDescription {
+    max-width: 280px;
+    font-size: .9rem;
   }
-}
 
-@media (max-width: 350px) {
-  .appDescription {
-    max-width: 250px;
-    font-size: .7rem;
+  .searchDescription {
+    font-size: .75rem;
   }
 
   .welcomeTitle {
@@ -241,16 +250,29 @@
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  .form > * {
+    width: 150px;
+  }
+
+  .form > button {
+    width: 150px;
+  }
+
+  .footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
 @media (max-width: 300px) {
   .appDescription {
-    max-width: 200px;
-    font-size: .6rem;
+    max-width: 250px;
+    font-size: .9rem;
   }
-  
+
   .welcomeTitle {
     font-size: 1.3rem;
   }
@@ -259,6 +281,20 @@
     font-size: 2.2rem;
   }
 
+  .homePage {
+    min-height: 30vh;
+  }
+
+  .footer {
+    padding: 25px;
+    font-size: .7rem;
+  }
+}
+
+@media (max-width: 250px) {
+  .logoTitle {
+    font-size: 2rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

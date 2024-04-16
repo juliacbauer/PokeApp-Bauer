@@ -41,7 +41,7 @@
 
 @media (max-width: 420px) {
   .container {
-    font-size: .5rem;
+    font-size: .7rem;
   }
   
   .logo {
@@ -49,10 +49,13 @@
   }
 }
 
-
 @media (max-width: 300px) {
-
   .logo {
-    font-size: .6rem;
+    font-size: .4rem;
+  }
+
+  .container {
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }

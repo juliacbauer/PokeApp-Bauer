@@ -20,12 +20,10 @@ export default function WordDisplay({ word }) {
             {word.meanings.map((meaning, index) => (
               <li key={index}>
                 <p>Part of Speech: {meaning.partOfSpeech}</p>
-                <p>Definitions:</p>
-                <ul>
+                <h3>Definitions:</h3>
                   {meaning.definitions.map((definition, index) => (
                     <li key={index}>{JSON.stringify(definition.definition)}</li>
                   ))}
-                </ul>
                 {meaning.synonyms.length > 0 && (
                   <p>Synonyms: {meaning.synonyms.join(', ')}</p>
                 )}

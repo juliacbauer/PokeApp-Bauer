@@ -89,7 +89,7 @@ function clearWordData() {
           Word Search
         </h1>
         <br />
-        <p className={styles.appDescription}>
+        <p className={styles.searchDescription}>
           Search for words to add to your vocabulary list!
         </p>
 
