@@ -7,6 +7,10 @@
     color: #e4effd;
 }
 
+.listPoints {
+  margin-left: -15px;
+}
+
 .button {
         cursor: pointer;
         background-color: #7193bf;
@@ -48,5 +52,9 @@
     .wordInfo {
         max-width: 230px;
         font-size: .8rem;
+    }
+
+    .listPoints {
+      margin-left: -2opx;
     }
 }

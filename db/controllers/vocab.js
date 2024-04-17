@@ -1,8 +1,10 @@
 //db CRUD with user info 
-//WIP
 
 import User from '../models/user'
-import { dbConnect } from './util'
+//db not working?
+//do i need util normalize?
+//importing db correctly?
+import { dbConnect } from '../connection'
 
 //get user saved vocab list
 export async function getVocab(userId) {
@@ -13,8 +15,8 @@ export async function getVocab(userId) {
   }
 
 //add word to vocab list
-//make sure to not be able to add duplicates?
-export async function addWord(userId, word) {
+//where does "word" come from?
+export async function addToVocab(userId, word) {
     await dbConnect()
     const user = await User.findByIdAndUpdate(
       userId,
@@ -22,11 +24,11 @@ export async function addWord(userId, word) {
       { new: true }
     )
     if (!user) return null
-    return res.status(200).json({ message: "Word added to vocabulary list!" });
+    return true
   }
  
 //remove word from vocab list
-export async function remove(userId, wordId) {
+export async function removeWord(userId, wordId) {
     await dbConnect()
     const user = await User.findByIdAndUpdate(
       userId,
@@ -34,5 +36,5 @@ export async function remove(userId, wordId) {
       { new: true }
     )
     if (!user) return null
-    return res.status(200).json({ message: "Word removed from vocabulary list." });
+    return true
   }

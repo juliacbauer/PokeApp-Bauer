@@ -6,11 +6,11 @@ export default function WordDisplay({ word }) {
 
   return (
     <div className={styles.wordInfo} key={word.id}>
-      <ol>
-        <li> {/*<need the # order to map, all showing as 1 rn*/}
+      <ul>
+        <li> {/*figure out how to map using ol?*/}
           <h2 style={{ textTransform: 'capitalize' }}>{word.word}</h2>
         </li>
-      </ol>
+      </ul>
       {!showMore && (
         <button className={styles.button} onClick={() => setShowMore(true)}>Show More</button>
       )}
@@ -21,9 +21,11 @@ export default function WordDisplay({ word }) {
               <li key={index}>
                 <p>Part of Speech: {meaning.partOfSpeech}</p>
                 <h3>Definitions:</h3>
+                <ul className={styles.listPoints}>
                   {meaning.definitions.map((definition, index) => (
                     <li key={index}>{JSON.stringify(definition.definition)}</li>
                   ))}
+                </ul>
                 {meaning.synonyms.length > 0 && (
                   <p>Synonyms: {meaning.synonyms.join(', ')}</p>
                 )}

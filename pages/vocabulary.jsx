@@ -31,7 +31,17 @@ export const getServerSideProps = withIronSessionSsr(
   sessionOptions
 );
 
-//add async onclick button function for delete from vocab...?
+//async function removeWord(e) {
+  //e.preventDefault()
+  //console.log("Word removed from vocabulary:", wordData)
+    //const res = await fetch(`/api/word`, {
+      //method:'DELETE',
+      //body: JSON.stringify({ id: word.id})
+    //})
+    //if (res.status === 200) {
+      //router.replace(router.asPath)
+    //}
+//}
 
 export default function Vocabulary(props) {
   const router = useRouter();
@@ -60,6 +70,7 @@ export default function Vocabulary(props) {
 
         {/*props.vocabularyList.length > 0 ? <VocabList vocab={props.vocabularyList} /> : 
         //delete button in here some where? mapped with each word?
+        //add async onclick button function for delete from vocab... onclick={removeWord}
         <p>No words in vocabulary list</p>*/}
 
         {/*if no vocab words, display message saying visit word search to add words

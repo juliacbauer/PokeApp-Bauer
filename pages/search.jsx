@@ -28,7 +28,7 @@ export default function Search(props) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [wordData, setWordData] = useState(null);
-  const [showMoreStates, setShowMoreStates] = useState({});
+  const [showMoreInfo, setShowMoreInfo] = useState({});
   async function handleSubmit(e) {
     e.preventDefault()
     if (!query.trim()) return
@@ -44,7 +44,7 @@ export default function Search(props) {
     } else if (res.status == 200){ 
       //router.replace(router.pathname + `?q=${query}`)
       setWordData(wordData)
-      setShowMoreStates({});
+      setShowMoreInfo([]);
     }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -56,7 +56,9 @@ export default function Search(props) {
 async function addToVocab(e) {
   e.preventDefault()
   //console logging displayed word search data onclick
-  console.log("Word added to vocabulary:", wordData);
+  console.log("Word added to vocabulary:", wordData)
+    //this is the error line in console log, the fetch part
+    //dbconnect is not a function error in inspect networks tab
     const res = await fetch('/api/word', {
       method:'POST',
       headers: {
