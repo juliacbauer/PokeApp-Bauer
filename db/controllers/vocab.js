@@ -1,10 +1,4 @@
-//db CRUD with user info 
-
 import User from '../models/user'
-//db not working
-//importing db correctly? no curly brackets?
-//400 error for POST in console log, says dbConnect is not a function
-//If I get rid of the brackets, error goes away but it does not register a POST at all
 import dbConnect  from '../connection'
 
 //get user saved vocab list
@@ -16,7 +10,6 @@ export async function getVocab(userId) {
   }
 
 //add word to vocab list
-//where does "word" come from?
 export async function addToVocab(userId, word) {
     await dbConnect()
     console.log(userId, word)

@@ -1,5 +1,3 @@
-//routes to call db and connect action button functions to db CRUD - POST, DELETE, etc.
-
 import { withIronSessionApiRoute } from "iron-session/next";
 import sessionOptions from "../../config/session"
 import db from '../../db';
@@ -15,11 +13,7 @@ export default withIronSessionApiRoute(
       case 'POST':
         //add word to vocab list
         try {
-          //are "word" and req.body correct? accessing the right thing?
           const word = req.body
-          //think this is the problem, the "db" part
-          //dbconnect is not a function error in inspect networks tab
-          //add .controllers maybe? But gives a different error
           const addedWord = await db.vocab.addToVocab(userId, word)
           if(addedWord === null) {
             req.session.destroy() 

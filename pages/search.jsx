@@ -8,18 +8,14 @@ import styles from "../styles/Home.module.css";
 import Header from "../components/header";
 import { useState } from "react";
 import WordDisplay from "../components/WordDisplay";
-//import db from "../db"?
 
 export const getServerSideProps = withIronSessionSsr(
-  async function getServerSideProps({ req /*, params?*/ }) {
+  async function getServerSideProps({ req }) {
     const user = req.session.user;
     const props = {};
     if (user) {
       props.user = req.session.user;
       props.isLoggedIn = true;
-      //const word = await db.vocab.getVocab(req.session.user.id, params.id)?
-      //if (word)?
-        //props.word = word?
     } else {
       props.isLoggedIn = false;
     }
@@ -32,7 +28,6 @@ export default function Search(props) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [wordData, setWordData] = useState(null);
-  const [showMoreInfo, setShowMoreInfo] = useState({});
   async function handleSubmit(e) {
     e.preventDefault()
     if (!query.trim()) return
@@ -43,26 +38,19 @@ export default function Search(props) {
       const wordData = await res.json()
       console.log(wordData)
       if (res.status === 404) {
-      //router.replace(router.pathname + `?q=${query}`)
       setWordData(null);
     } else if (res.status == 200){ 
-      //router.replace(router.pathname + `?q=${query}`)
       setWordData(wordData[0])
-      setShowMoreInfo([]);
     }
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   }
 
-//add async onclick button function for add to vocab...?
-//getting 400 bad request
+//onclick button function for add to vocab
 async function addToVocab(e) {
   e.preventDefault()
   //console logging displayed word search data onclick
-  console.log("Word added to vocabulary:", wordData)
-    //this is the error line in console log, the fetch part
-    //dbconnect is not a function error in inspect networks tab
     const res = await fetch('/api/word', {
       method:'POST',
       headers: {
@@ -72,12 +60,8 @@ async function addToVocab(e) {
     })
     if (res.status === 200) {
       router.replace(router.asPath)
+      console.log("Word added to vocabulary:", wordData)
     }
-}
-
-//to close show more info with next search
-function clearWordData() {
-  setWordData(null);
 }
 
   return (
@@ -108,15 +92,14 @@ function clearWordData() {
           type="text"
           name="word-search"/>
           <br />
-        <button type="submit" onClick={clearWordData}>Submit</button>
+        <button type="submit">Submit</button>
       </form>
 
       <br />
 
       {wordData !== null ? (
-       true ? (
         <div>
-            <WordDisplay word={wordData}/>
+          <WordDisplay word={wordData}/>
           <div className={styles.buttonContainer}>
             <button onClick={addToVocab} 
             className={styles.otherButtons}>Add to Vocabulary</button>
@@ -124,7 +107,7 @@ function clearWordData() {
         </div>
         ) : (
           <div className={styles.wordSearchInfo}>No words found.</div>
-        )) : null}
+        )}
 
         <br />
         <br />

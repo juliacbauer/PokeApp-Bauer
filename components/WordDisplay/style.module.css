@@ -12,23 +12,19 @@
 }
 
 .button {
-        cursor: pointer;
-        background-color: #7193bf;
-        transition: 0.15s ease;
-        color: #e4effd;
-        border-radius: 10px;
-        padding: 10px;
-        width: 100px;
-        border: none;
+    cursor: pointer;
+    background-color: #7193bf;
+    transition: 0.15s ease;
+    color: #e4effd;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+    border: none;
 }
 
 .button:is(:hover) {
     background-color: #4579b4
   }
-
-.wordInfo ul li {
-    margin-bottom: 15px;
-}
 
 @media (max-width: 750px) {
     .wordInfo {
@@ -55,6 +51,6 @@
     }
 
     .listPoints {
-      margin-left: -2opx;
+      margin-left: -20px;
     }
 }
