@@ -11,13 +11,7 @@ const wordSchema = new Schema({
   }],
   phonetics: [{
     text: String,
-    audio: String,
   }],
-  sourceUrls: [String],
-  license: {
-    name: String,
-    url: String,
-  },
 });
 
 export default wordSchema;

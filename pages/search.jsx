@@ -44,10 +44,10 @@ export default function Search(props) {
       console.log(wordData)
       if (res.status === 404) {
       //router.replace(router.pathname + `?q=${query}`)
-      setWordData([]);
+      setWordData(null);
     } else if (res.status == 200){ 
       //router.replace(router.pathname + `?q=${query}`)
-      setWordData(wordData)
+      setWordData(wordData[0])
       setShowMoreInfo([]);
     }
     } catch (error) {
@@ -68,7 +68,7 @@ async function addToVocab(e) {
       headers: {
         "content-type": "application/json"
       }, 
-      body: JSON.stringify(wordData)
+      body: JSON.stringify(wordData[0])
     })
     if (res.status === 200) {
       router.replace(router.asPath)
@@ -114,13 +114,9 @@ function clearWordData() {
       <br />
 
       {wordData !== null ? (
-       wordData.length > 0 ? (
+       true ? (
         <div>
-          {wordData.map((word, index) => (
-          <div key={index}>
-            <WordDisplay word={word}/>
-          </div>
-          ))}
+            <WordDisplay word={wordData}/>
           <div className={styles.buttonContainer}>
             <button onClick={addToVocab} 
             className={styles.otherButtons}>Add to Vocabulary</button>
