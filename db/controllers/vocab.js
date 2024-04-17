@@ -3,7 +3,7 @@
 import User from '../models/user'
 //db not working?
 //do i need util normalize?
-//importing db correctly?
+//importing db correctly? no curly brackets?
 import { dbConnect } from '../connection'
 
 //get user saved vocab list

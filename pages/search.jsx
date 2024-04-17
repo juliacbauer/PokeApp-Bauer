@@ -8,14 +8,18 @@ import styles from "../styles/Home.module.css";
 import Header from "../components/header";
 import { useState } from "react";
 import WordDisplay from "../components/WordDisplay";
+//import db from "../db"?
 
 export const getServerSideProps = withIronSessionSsr(
-  async function getServerSideProps({ req }) {
+  async function getServerSideProps({ req /*, params?*/ }) {
     const user = req.session.user;
     const props = {};
     if (user) {
       props.user = req.session.user;
       props.isLoggedIn = true;
+      //const word = await db.vocab.getVocab(req.session.user.id, params.id)?
+      //if (word)?
+        //props.word = word?
     } else {
       props.isLoggedIn = false;
     }
