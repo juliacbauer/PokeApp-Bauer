@@ -35,12 +35,12 @@ export default function Search(props) {
     const res = await fetch(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${query}`
       )
-      const wordData = await res.json()
-      console.log(wordData)
+      const wordInfo = await res.json()
+      console.log(wordInfo)
       if (res.status === 404) {
       setWordData(null);
     } else if (res.status == 200){ 
-      setWordData(wordData[0])
+      setWordData(wordInfo[0])
     }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -50,13 +50,14 @@ export default function Search(props) {
 //onclick button function for add to vocab
 async function addToVocab(e) {
   e.preventDefault()
+  console.log(wordData)
   //console logging displayed word search data onclick
     const res = await fetch('/api/word', {
       method:'POST',
       headers: {
         "content-type": "application/json"
       }, 
-      body: JSON.stringify(wordData[0])
+      body: JSON.stringify(wordData)
     })
     if (res.status === 200) {
       router.replace(router.asPath)

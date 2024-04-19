@@ -14,9 +14,7 @@ const UserSchema = new Schema({
     minLength: 5,
     maxLength: 200
   },
-  vocabularyList: [
-    wordSchema
-  ]
+  vocabularyList: [wordSchema]
 })
 
 // hashes the password before it's stored in mongo

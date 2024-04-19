@@ -15,6 +15,7 @@ export default withIronSessionApiRoute(
         try {
           const word = req.body
           const addedWord = await db.vocab.addToVocab(userId, word)
+          console.log("worked" , addedWord)
           if(addedWord === null) {
             req.session.destroy() 
             return res.status(401).end()

@@ -7,12 +7,12 @@ import sessionOptions from "../config/session";
 import styles from "../styles/Home.module.css";
 import Header from "../components/header";
 import useLogout from "../hooks/useLogout";
-//import db from "../db";
+import db from "../db";
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
     const user = req.session.user;
-    //const vocabulary = await db.word.getVocab(user.id)
+    const vocab = await db.vocab.getVocab(user._id)
     const props = {};
     if (user) {
       props.user = req.session.user;
@@ -21,11 +21,11 @@ export const getServerSideProps = withIronSessionSsr(
       props.isLoggedIn = false;
     }
     return {
-        props //: {
-        //user: req.session.user,
-        //isLoggedIn: true,
-        //vocabularyList: vocab,
-      //}
+        props: {
+        user: req.session.user,
+        isLoggedIn: true,
+        vocabularyList: vocab,
+      }
     };
   },
   sessionOptions
@@ -44,6 +44,7 @@ export const getServerSideProps = withIronSessionSsr(
 //}
 
 export default function Vocabulary(props) {
+  console.log(props)
   const router = useRouter();
   const logout = useLogout();
   return (
