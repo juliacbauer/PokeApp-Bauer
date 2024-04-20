@@ -32,38 +32,38 @@ export default function Search(props) {
     e.preventDefault()
     if (!query.trim()) return
     try {
-    const res = await fetch(
+      const res = await fetch(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${query}`
       )
       const wordInfo = await res.json()
       console.log(wordInfo)
       if (res.status === 404) {
-      setWordData(null);
-    } else if (res.status == 200){ 
-      setWordData(wordInfo[0])
-    }
+        setWordData(null);
+      } else if (res.status == 200) {
+        setWordData(wordInfo[0])
+      }
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   }
 
-//onclick button function for add to vocab
-async function addToVocab(e) {
-  e.preventDefault()
-  console.log(wordData)
-  //console logging displayed word search data onclick
+  //onclick button function for add to vocab
+  async function addToVocab(e) {
+    e.preventDefault()
+    console.log(wordData)
+    //console logging displayed word search data onclick
     const res = await fetch('/api/word', {
-      method:'POST',
+      method: 'POST',
       headers: {
         "content-type": "application/json"
-      }, 
+      },
       body: JSON.stringify(wordData)
     })
     if (res.status === 200) {
       router.replace(router.asPath)
       console.log("Word added to vocabulary:", wordData)
     }
-}
+  }
 
   return (
     <div className={styles.container}>
@@ -87,25 +87,25 @@ async function addToVocab(e) {
         <br />
 
         <form onSubmit={handleSubmit} className={styles.form}>
-        <input
-          value={query}
-          onChange={e => setQuery(e.target.value)}
-          type="text"
-          name="word-search"/>
+          <input
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            type="text"
+            name="word-search" />
           <br />
-        <button type="submit">Submit</button>
-      </form>
+          <button type="submit">Submit</button>
+        </form>
 
-      <br />
+        <br />
 
-      {wordData !== null ? (
-        <div>
-          <WordDisplay word={wordData}/>
-          <div className={styles.buttonContainer}>
-            <button onClick={addToVocab} 
-            className={styles.otherButtons}>Add to Vocabulary</button>
+        {wordData !== null ? (
+          <div>
+            <WordDisplay word={wordData} />
+            <div className={styles.buttonContainer}>
+              <button onClick={addToVocab}
+                className={styles.otherButtons}>Add to Vocabulary</button>
+            </div>
           </div>
-        </div>
         ) : (
           <div className={styles.wordSearchInfo}>No words found.</div>
         )}

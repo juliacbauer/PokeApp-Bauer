@@ -120,12 +120,12 @@
   align-items: center;
 }
 
-.form > * {
+.form>* {
   margin-bottom: 10px;
   width: 200px;
 }
 
-.form > button,
+.form>button,
 .otherButtons {
   cursor: pointer;
   background-color: #406898;
@@ -172,7 +172,8 @@
 }
 
 @media (max-width: 770px) {
-  .appDescription, 
+
+  .appDescription,
   .searchDescription {
     max-width: 550px;
   }
@@ -180,11 +181,12 @@
   .title {
     font-size: 3.5rem;
   }
+
   .logoTitle {
     font-size: 3.5rem;
   }
 
-  .homePage{
+  .homePage {
     min-height: 90vh;
   }
 }
@@ -201,7 +203,8 @@
     max-width: 420px;
     font-size: 1.1rem;
   }
-  .homePage{
+
+  .homePage {
     min-height: 90vh;
   }
 
@@ -211,6 +214,7 @@
 }
 
 @media (max-width: 450px) {
+
   .appDescription,
   .searchDescription {
     max-width: 350px;
@@ -231,6 +235,7 @@
 }
 
 @media (max-width: 370px) {
+
   .appDescription,
   .searchDescription {
     max-width: 280px;
@@ -244,7 +249,7 @@
   .welcomeTitle {
     font-size: 1.8rem;
   }
-  
+
   .logoTitle {
     font-size: 2.5rem;
   }
@@ -253,11 +258,11 @@
     font-size: 1.8rem;
   }
 
-  .form > * {
+  .form>* {
     width: 150px;
   }
 
-  .form > button {
+  .form>button {
     width: 150px;
   }
 
@@ -298,13 +303,16 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }

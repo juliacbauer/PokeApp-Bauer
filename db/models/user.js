@@ -18,7 +18,7 @@ const UserSchema = new Schema({
 })
 
 // hashes the password before it's stored in mongo
-UserSchema.pre('save', async function(next) {
+UserSchema.pre('save', async function (next) {
   if (this.isNew)
     this.password = await bcrypt.hash(this.password, 10)
   next()

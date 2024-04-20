@@ -38,8 +38,8 @@ export default function Dashboard(props) {
 
       <main className={styles.homePage}>
 
-      <br />
-      
+        <br />
+
         <h1 className={styles.welcomeTitle}>
           Welcome, {props.user.username}!
         </h1>
@@ -48,8 +48,8 @@ export default function Dashboard(props) {
           Start searching for words!
         </p>
 
-      <br />
-      <br />
+        <br />
+        <br />
 
         <div className={styles.grid}>
           <Link href="/search" className={styles.homeButtons}>

@@ -52,9 +52,9 @@ export default function Vocabulary(props) {
         </h1>
 
         <br />
-        
-        {props.vocabularyList.length > 0 ? <VocabList vocabList={props.vocabularyList} /> 
-        : <p>Visit the Word Search to add to your Vocabulary List!</p>}
+
+        {props.vocabularyList.length > 0 ? <VocabList vocabList={props.vocabularyList} />
+          : <p>Visit the Word Search to add to your Vocabulary List!</p>}
 
         <br />
 
