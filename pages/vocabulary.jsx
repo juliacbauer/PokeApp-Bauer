@@ -8,6 +8,7 @@ import styles from "../styles/Home.module.css";
 import Header from "../components/header";
 import useLogout from "../hooks/useLogout";
 import db from "../db";
+import VocabList from "../components/VocabList"
 
 export const getServerSideProps = withIronSessionSsr(
   async function getServerSideProps({ req }) {
@@ -21,7 +22,7 @@ export const getServerSideProps = withIronSessionSsr(
       props.isLoggedIn = false;
     }
     return {
-        props: {
+      props: {
         user: req.session.user,
         isLoggedIn: true,
         vocabularyList: vocab,
@@ -30,18 +31,6 @@ export const getServerSideProps = withIronSessionSsr(
   },
   sessionOptions
 );
-
-//async function removeWord(e) {
-  //e.preventDefault()
-  //console.log("Word removed from vocabulary:", wordData)
-    //const res = await fetch(`/api/word`, {
-      //method:'DELETE',
-      //body: JSON.stringify({ id: word.id})
-    //})
-    //if (res.status === 200) {
-      //router.replace(router.asPath)
-    //}
-//}
 
 export default function Vocabulary(props) {
   console.log(props)
@@ -63,20 +52,12 @@ export default function Vocabulary(props) {
         </h1>
 
         <br />
-        <p className={styles.appDescription}>
-          View your saved words below.
-        </p>
+        
+        {props.vocabularyList.length > 0 ? <VocabList vocabList={props.vocabularyList} /> 
+        : <p>Visit the Word Search to add to your Vocabulary List!</p>}
 
         <br />
 
-        {/*props.vocabularyList.length > 0 ? <VocabList vocab={props.vocabularyList} /> : 
-        //delete button in here some where? mapped with each word?
-        //add async onclick button function for delete from vocab... onclick={removeWord}
-        <p>No words in vocabulary list</p>*/}
-
-        {/*if no vocab words, display message saying visit word search to add words
-        to your vocab */}
-        
         <div className={styles.grid}>
           {props.isLoggedIn ? (
             <>

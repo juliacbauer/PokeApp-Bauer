@@ -1,0 +1,58 @@
+.wordInfo {
+  background-color: #406898;
+  padding: 20px;
+  margin-bottom: 30px;
+  width: 550px;
+  border-radius: 20px;
+  color: #e4effd;
+  margin-top: 30px;
+}
+
+.listPoints {
+  margin-left: -15px;
+}
+
+.button {
+  cursor: pointer;
+  background-color: #7193bf;
+  transition: 0.15s ease;
+  color: #e4effd;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100px;
+  border: none;
+  margin: 5px 5px 5px 0px;
+}
+
+.button:is(:hover) {
+  background-color: #4579b4
+  }
+
+@media (max-width: 750px) {
+  .wordInfo {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wordInfo {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  .wordInfo {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 350px) {
+  .wordInfo {
+      max-width: 230px;
+      font-size: .8rem;
+  }
+
+  .listPoints {
+    margin-left: -20px;
+  }
+}
