@@ -27,10 +27,11 @@ export async function addToVocab(userId, word) {
 
 //remove word from vocab list
 export async function removeWord(userId, wordId) {
+  console.log("Word ID from API route", wordId);
   await dbConnect()
   const user = await User.findByIdAndUpdate(
     userId,
-    { $pull: { vocabularyList: { _id: wordId } } },
+    { $pull: { vocabularyList: { id: wordId } } },
     { new: true }
   )
   if (!user) return null

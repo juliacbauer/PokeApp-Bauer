@@ -14,9 +14,10 @@ export default function VocabList({ vocabList }) {
   //delete word from vocab list
   //WIP
   async function removeWord(wordId) {
+    console.log("Removing word with ID:", wordId);
     const res = await fetch('/api/word', {
       method: 'DELETE',
-      body: JSON.stringify({ _id: wordId })
+      body: JSON.stringify({ id: wordId })
     })
     if (res.status === 200) {
       router.replace(router.asPath)

@@ -27,8 +27,10 @@ export default withIronSessionApiRoute(
       case 'DELETE':
         try {
           //delete word from vocab list
-          const word = req.body
-          const deletedWord = await db.vocab.removeWord(userId, word.id)
+          console.log("ID:", req.body);
+          const { id: wordId } = req.body
+          console.log("Word ID for remove", wordId);
+          const deletedWord = await db.vocab.removeWord(userId, wordId)
           if (deletedWord === null) {
             req.session.destroy()
             return res.status(401).end()
