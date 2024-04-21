@@ -31,7 +31,7 @@ export async function removeWord(userId, wordId) {
   await dbConnect()
   const user = await User.findByIdAndUpdate(
     userId,
-    { $pull: { vocabularyList: { id: wordId } } },
+    { $pull: { vocabularyList: { _id: wordId } } },
     { new: true }
   )
   if (!user) return null
