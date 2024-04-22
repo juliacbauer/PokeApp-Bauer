@@ -20,7 +20,10 @@ export default withIronSessionApiRoute(
             req.session.destroy()
             return res.status(401).end()
           }
-          return res.status(200).json({ word: addedWord })
+          if (addedWord === false) {
+            return res.status(200).json({ message: "This word has already been added to your Vocabulary List." });
+          }
+          return res.status(200).json({ word: addedWord, message: "Word added to your Vocabulary List!" })
         } catch (error) {
           return res.status(400).json({ error: error.message })
         }

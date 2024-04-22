@@ -28,6 +28,7 @@ export default function Search(props) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [wordData, setWordData] = useState(null);
+  const [addedMessage, setAddedMessage] = useState("");
   async function handleSubmit(e) {
     e.preventDefault()
     if (!query.trim()) return
@@ -42,6 +43,7 @@ export default function Search(props) {
       } else if (res.status == 200) {
         setWordData(wordInfo[0])
       }
+      setAddedMessage('');
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -60,8 +62,13 @@ export default function Search(props) {
       body: JSON.stringify(wordData)
     })
     if (res.status === 200) {
-      router.replace(router.asPath)
-      console.log("Word added to vocabulary:", wordData)
+      const alert = await res.json()
+      if (alert.message) {
+        setAddedMessage(alert.message)
+      } else {
+        router.replace(router.asPath)
+        console.log("Word added to vocabulary:", wordData)
+      }
     }
   }
 
@@ -105,6 +112,7 @@ export default function Search(props) {
               <button onClick={addToVocab}
                 className={styles.otherButtons}>Add to Vocabulary</button>
             </div>
+            {addedMessage && <div className={styles.alertMessage}>{addedMessage}</div>}
           </div>
         ) : (
           <div className={styles.wordSearchInfo}>No words found.</div>

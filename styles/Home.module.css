@@ -193,6 +193,12 @@
   width: 180px;
 }
 
+.alertMessage {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: -10px;
+}
+
 .homeButtons h2 {
   font-size: 1.2rem;
 }
