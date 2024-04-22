@@ -93,7 +93,7 @@
 }
 
 .appExplained {
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   color: #e4effd;
   background-color: #406898; 
   padding: 20px;
@@ -206,7 +206,7 @@
   }
 
   .appExplained {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .title {
@@ -234,7 +234,7 @@
   }
 
   .appExplained {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     margin-top: -2px;
   }
 
@@ -267,7 +267,7 @@
   }
 
   .appExplained {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .vocabDescription {
@@ -304,7 +304,7 @@
   }
 
   .appExplained {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 15px;
   }
 
@@ -357,7 +357,6 @@
   }
 
   .appExplained {
-    font-size: 1rem;
     padding: 15px;
   }
 
