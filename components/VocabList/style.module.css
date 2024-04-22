@@ -55,4 +55,21 @@
   .listPoints {
     margin-left: -20px;
   }
+
+  .button {
+    font-size: .6rem;
+    width: 70px;
+  }
+}
+
+@media (max-width: 260px) {
+  .wordInfo {
+      max-width: 200px;
+      margin-top: 10px;
+  }
+
+  .listPoints {
+    margin-left: -30px;
+  }
+
 }

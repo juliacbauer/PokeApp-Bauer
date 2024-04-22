@@ -40,7 +40,7 @@ export default function Dashboard(props) {
 
         <br />
 
-        <h1 className={styles.welcomeTitle}>
+        <h1 className={styles.welcomeTitleDash}>
           Welcome, {props.user.username}!
         </h1>
 
@@ -52,7 +52,7 @@ export default function Dashboard(props) {
         <br />
 
         <div className={styles.grid}>
-          <Link href="/search" className={styles.homeButtons}>
+          <Link href="/search" className={styles.homeButtonsDash}>
             <h2>Word Search &rarr;</h2>
           </Link>
         </div>

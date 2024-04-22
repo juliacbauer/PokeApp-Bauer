@@ -54,3 +54,21 @@
     margin-left: -20px;
   }
 }
+
+@media (max-width: 260px) {
+  .wordInfo {
+    max-width: 220px;
+  }
+
+  .listPoints {
+    margin-left: -30px;
+  }
+
+}
+
+@media (max-width: 230px) {
+  .wordInfo {
+    max-width: 200px;
+  }
+  
+}

@@ -60,8 +60,8 @@ export default function Login(props) {
 
       <Header isLoggedIn={props.isLoggedIn} username={props?.user?.username} />
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
+      <main className={styles.mainLogin}>
+        <h1 className={styles.loginTitle}>
           Login
         </h1>
         <br />

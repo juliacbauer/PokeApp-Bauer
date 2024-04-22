@@ -43,7 +43,7 @@ export default function VocabList({ vocabList }) {
                     <p>Definitions:</p>
                     <ul>
                       {meaning.definitions.map((definition, index) => (
-                        <li key={index}>{JSON.stringify(definition.definition)}</li>
+                        <li key={index} className={styles.listPoints}>{JSON.stringify(definition.definition)}</li>
                       ))}
                     </ul>
                     {meaning.synonyms.length > 0 && (

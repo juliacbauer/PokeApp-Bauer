@@ -59,3 +59,13 @@
     padding-bottom: 5px;
   }
 }
+
+@media (max-width: 270px) {
+  .logo {
+    font-size: .4rem;
+  }
+
+  .container {
+    font-size: .5rem;
+  }
+}

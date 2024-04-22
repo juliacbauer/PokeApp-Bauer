@@ -1,7 +1,8 @@
 /*Need to do button/card media query sizing*/
 
 .main,
-.homePage {
+.homePage,
+.mainLogin {
   min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
@@ -22,7 +23,7 @@
   background-image: url('../public/bg5.jpeg');
   background-size: cover;
   background-position: center top;
-  height: calc(55vh + 4rem);
+  height: calc(45vh + 4rem);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -70,7 +71,8 @@
   text-decoration: underline;
 }
 
-.title {
+.title,
+.loginTitle {
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
@@ -85,7 +87,8 @@
   font-family: "pencil";
 }
 
-.welcomeTitle {
+.welcomeTitle,
+.welcomeTitleDash {
   margin: 0;
   line-height: 1.15;
   font-size: 2.5rem;
@@ -93,9 +96,9 @@
 }
 
 .appExplained {
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   color: #e4effd;
-  background-color: #406898; 
+  background-color: #406898;
   padding: 20px;
   border-radius: 10px;
 }
@@ -108,7 +111,8 @@
 }
 
 .title,
-.description {
+.description,
+.loginTitle {
   text-align: center;
 }
 
@@ -166,7 +170,10 @@
 
 .form>button:is(:hover),
 .otherButtons:is(:hover),
-.homeButtons:is(:hover) {
+.homeButtons:is(:hover),
+.homeButtonsDash:is(:hover),
+.vocabButtons:is(:hover),
+.wordButton:is(:hover) {
   background-color: #4579b4
 }
 
@@ -180,9 +187,13 @@
   margin-left: 0.5rem;
 }
 
-.homeButtons {
+.homeButtons,
+.homeButtonsDash,
+.vocabButtons,
+.wordButton {
   margin: 1rem;
   padding: 1rem;
+  font-size: .8rem;
   text-align: center;
   color: #e4effd;
   background: #406898;
@@ -199,23 +210,24 @@
   margin-bottom: -10px;
 }
 
-.homeButtons h2 {
-  font-size: 1.2rem;
-}
-
 @media (max-width: 770px) {
 
   .appDescription,
-  .searchDescriptio,
+  .searchDescription,
   .vocabDescription {
     max-width: 550px;
   }
 
-  .appExplained {
-    font-size: 1.8rem;
+  .vocabDescription {
+    font-size: 1.4rem;
   }
 
-  .title {
+  .appExplained {
+    font-size: 1.6rem;
+  }
+
+  .title,
+  .loginTitle {
     font-size: 3.5rem;
   }
 
@@ -233,10 +245,14 @@
 }
 
 @media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
+
+  .homeButtons,
+  .homeButtonsDash,
+  .vocabButtons,
+  .wordButton {
+    padding: .5rem;
+    font-size: .6rem;
+    width: 150px;
   }
 
   .appExplained {
@@ -259,7 +275,8 @@
     min-height: 90vh;
   }
 
-  .title {
+  .title,
+  .loginTitle {
     font-size: 2.8rem;
   }
 }
@@ -272,8 +289,29 @@
     font-size: 1rem;
   }
 
+  .welcomeTitleDash {
+    margin-top: -150px;
+  }
+
+  .homeButtons,
+  .vocabButtons,
+  .wordButton {
+    padding: .2rem;
+    width: 120px;
+  }
+
+  .homeButtonsDash {
+    padding: .2rem;
+    width: 150px;
+  }
+
   .appExplained {
     font-size: 1.2rem;
+  }
+
+  .alertMessage {
+    font-size: .9rem;
+    max-width: 300px;
   }
 
   .vocabDescription {
@@ -284,7 +322,8 @@
     height: calc(30vh + 4rem);
   }
 
-  .welcomeTitle {
+  .welcomeTitle,
+  .welcomeTitleDash {
     font-size: 2rem;
   }
 
@@ -296,7 +335,8 @@
     font-size: 3rem;
   }
 
-  .title {
+  .title,
+  .loginTitle {
     font-size: 2rem;
   }
 }
@@ -309,13 +349,34 @@
     font-size: .9rem;
   }
 
+  .searchPage {
+    min-height: 80vh;
+  }
+
+  .vocabDescription {
+    max-width: 270px;
+    text-align: center;
+  }
+
   .appExplained {
     font-size: 1rem;
     padding: 15px;
   }
 
+  .mainLogin {
+    padding-top: -100px;
+  }
+
+  .homeButtons {
+    width: 100px;
+  }
+
   .vocabDescription {
     font-size: .8rem;
+  }
+
+  .loginTitle {
+    margin-top: -150px;
   }
 
   .homePageImg {
@@ -326,7 +387,13 @@
     font-size: .75rem;
   }
 
-  .welcomeTitle {
+  .alertMessage {
+    font-size: .8rem;
+    max-width: 300px;
+  }
+
+  .welcomeTitle,
+  .welcomeTitleDash {
     font-size: 1.8rem;
   }
 
@@ -340,6 +407,7 @@
 
   .title {
     font-size: 1.8rem;
+    margin-top: -30px;
   }
 
   .form>* {
@@ -356,25 +424,55 @@
   }
 }
 
+@media (max-width: 350px) {
+
+  .alertMessage {
+    font-size: .8rem;
+    max-width: 220px;
+  }
+}
+
 @media (max-width: 300px) {
   .appDescription {
     max-width: 250px;
     font-size: .9rem;
   }
 
-  .appExplained {
-    padding: 15px;
+  .welcomeTitleDash {
+    margin-top: -200px;
   }
 
-  .vocabDescription {
-    font-size: .7rem;
+  .homeButtons {
+    padding: .1rem;
+    width: 80px;
+    margin-bottom: -20px;
+  }
+
+  .searchDescription {
+    max-width: 220px;
+    text-align: center;
+  }
+
+  .homeButtonsDash {
+    padding: .1rem;
+    width: 120px;
+    margin-bottom: -20px;
+  }
+
+  .appExplained {
+    padding: 15px;
   }
 
   .homePageImg {
     height: calc(20vh + 4rem);
   }
 
-  .welcomeTitle {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .welcomeTitle,
+  .welcomeTitleDash {
     font-size: 1.3rem;
   }
 
@@ -382,8 +480,9 @@
     font-size: 2.2rem;
   }
 
-  .homePage {
-    min-height: 30vh;
+  .homePage,
+  .searchPage {
+    min-height: 85vh;
   }
 
   .footer {
@@ -392,11 +491,47 @@
   }
 }
 
-@media (max-width: 250px) {
+@media (max-width: 260px) {
+
   .logoTitle {
     font-size: 2rem;
   }
+
+  .appDescription {
+    max-width: 230px;
+  }
 }
+
+@media (max-width: 240px) {
+
+  .logoTitle {
+    font-size: 1.8rem;
+  }
+
+  .vocabDescription {
+    max-width: 200px;
+  }
+
+  .appDescription {
+    max-width: 200px;
+  }
+
+  .homeButtons {
+    width: 70px;
+    font-size: .5rem;
+    margin-bottom: -20px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    margin-top: -50px;
+  }
+
+  .alertMessage {
+    max-width: 220px;
+  }
+}
+
 
 @media (prefers-color-scheme: dark) {
 

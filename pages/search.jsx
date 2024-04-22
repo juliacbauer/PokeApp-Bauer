@@ -124,7 +124,7 @@ export default function Search(props) {
         <div className={styles.grid}>
           {props.isLoggedIn ? (
             <>
-              <Link href="/vocabulary" className={styles.homeButtons}>
+              <Link href="/vocabulary" className={styles.vocabButtons}>
                 <h2>My Vocab &rarr;</h2>
               </Link>
             </>
