@@ -12,7 +12,6 @@ export default function VocabList({ vocabList }) {
     }));
   }
   //delete word from vocab list
-  //WIP
   async function removeWord(wordId) {
     console.log("Removing word with ID:", wordId);
     const res = await fetch('/api/word', {
