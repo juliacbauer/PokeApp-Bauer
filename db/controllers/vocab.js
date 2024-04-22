@@ -8,7 +8,6 @@ export async function getVocab(userId) {
   console.log(user.vocabularyList)
   if (!user) return null
   return JSON.parse(JSON.stringify(user.vocabularyList))
-  //return user.vocabularyList
 }
 
 //add word to vocab list
