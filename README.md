@@ -1,1 +1,1 @@
-# PokeApp-Bauer
+# ProsePal-Bauer
