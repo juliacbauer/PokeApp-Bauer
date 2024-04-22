@@ -54,7 +54,7 @@ export default function Vocabulary(props) {
         <br />
 
         {props.vocabularyList.length > 0 ? <VocabList vocabList={props.vocabularyList} />
-          : <p>Visit the Word Search to add to your Vocabulary List!</p>}
+          : <p className={styles.vocabDescription}>Visit the Word Search to add to your Vocabulary List!</p>}
 
         <br />
 

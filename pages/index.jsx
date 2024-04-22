@@ -38,12 +38,24 @@ export default function Home(props) {
 
       <main className={styles.homePage}>
         <br />
+        <div className={styles.homePageImg}>
         <h1 className={styles.welcomeTitle}>
           Welcome to 
         </h1>
         <br />
         <h1 className={styles.logoTitle}>[Prose_Pal]</h1>
         <br />
+        <h2 className={styles.motto}>
+          Every reader's best friend.
+        </h2>
+        </div>
+
+        <br />
+        <br />
+
+        <h2 className={styles.appExplained}>
+          What is Prose Pal?
+        </h2>
 
         <p className={styles.appDescription}>
           Prose Pal is an app designed to help avid readers and writers discover and track words.

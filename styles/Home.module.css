@@ -1,3 +1,5 @@
+/*Need to do button/card media query sizing*/
+
 .main,
 .homePage {
   min-height: 100vh;
@@ -15,9 +17,18 @@
   src: url('../public/Pencilized Demo.ttf');
 }
 
-.homePage {
+.homePageImg {
+  position: relative;
   background-image: url('../public/bg5.jpeg');
   background-size: cover;
+  background-position: center top;
+  height: calc(55vh + 4rem);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -85px;
 }
 
 .searchPage {
@@ -81,20 +92,35 @@
   color: #406898;
 }
 
+.appExplained {
+  font-size: 2.5rem;
+  color: #e4effd;
+  background-color: #406898; 
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.motto {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 1.5rem;
+  color: #406898;
+}
+
 .title,
 .description {
   text-align: center;
 }
 
 .appDescription,
-.searchDescription {
+.searchDescription,
+.vocabDescription {
   line-height: 1.2;
   font-size: 1.5rem;
   font-weight: 500;
   color: #406898;
   text-align: left;
   max-width: 730px;
-
 }
 
 .grid {
@@ -174,8 +200,13 @@
 @media (max-width: 770px) {
 
   .appDescription,
-  .searchDescription {
+  .searchDescriptio,
+  .vocabDescription {
     max-width: 550px;
+  }
+
+  .appExplained {
+    font-size: 2rem;
   }
 
   .title {
@@ -189,6 +220,10 @@
   .homePage {
     min-height: 90vh;
   }
+
+  .homePageImg {
+    height: calc(40vh + 4rem);
+  }
 }
 
 @media (max-width: 600px) {
@@ -198,8 +233,18 @@
     align-items: center;
   }
 
+  .appExplained {
+    font-size: 1.7rem;
+    margin-top: -2px;
+  }
+
+  .homePageImg {
+    height: calc(35vh + 4rem);
+  }
+
   .appDescription,
-  .searchDescription {
+  .searchDescription,
+  .vocabDescription {
     max-width: 420px;
     font-size: 1.1rem;
   }
@@ -221,8 +266,24 @@
     font-size: 1rem;
   }
 
+  .appExplained {
+    font-size: 1.4rem;
+  }
+
+  .vocabDescription {
+    font-size: .9rem;
+  }
+
+  .homePageImg {
+    height: calc(30vh + 4rem);
+  }
+
   .welcomeTitle {
     font-size: 2rem;
+  }
+
+  .motto {
+    font-size: 1.3rem;
   }
 
   .logoTitle {
@@ -242,12 +303,29 @@
     font-size: .9rem;
   }
 
+  .appExplained {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+
+  .vocabDescription {
+    font-size: .8rem;
+  }
+
+  .homePageImg {
+    height: calc(25vh + 4rem);
+  }
+
   .searchDescription {
     font-size: .75rem;
   }
 
   .welcomeTitle {
     font-size: 1.8rem;
+  }
+
+  .motto {
+    font-size: 1rem;
   }
 
   .logoTitle {
@@ -276,6 +354,19 @@
   .appDescription {
     max-width: 250px;
     font-size: .9rem;
+  }
+
+  .appExplained {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .vocabDescription {
+    font-size: .7rem;
+  }
+
+  .homePageImg {
+    height: calc(20vh + 4rem);
   }
 
   .welcomeTitle {
