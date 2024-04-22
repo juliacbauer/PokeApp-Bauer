@@ -14,9 +14,9 @@ Prose Pal is designed to be every reader - and writer's - best friend. Readers a
 
 <br> </br>
 
-<img width="500" alt="Screenshot 2024-04-22 at 5 23 24 PM" src="https://github.com/juliacbauer/ProsePal-Bauer/assets/122422145/b2545c7b-1ec8-42ae-8f75-d21cd32c0abf">
+<img width="800" alt="Screenshot 2024-04-22 at 5 23 24 PM" src="https://github.com/juliacbauer/ProsePal-Bauer/assets/122422145/b2545c7b-1ec8-42ae-8f75-d21cd32c0abf">
 
-<img width="500" alt="Screenshot 2024-04-22 at 5 24 02 PM" src="https://github.com/juliacbauer/ProsePal-Bauer/assets/122422145/01822888-c6a2-44d0-97fe-9e4d23af370f">
+<img width="800" alt="Screenshot 2024-04-22 at 5 24 02 PM" src="https://github.com/juliacbauer/ProsePal-Bauer/assets/122422145/01822888-c6a2-44d0-97fe-9e4d23af370f">
 
 <br> </br>
 
