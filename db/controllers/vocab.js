@@ -5,7 +5,6 @@ import dbConnect from '../connection'
 export async function getVocab(userId) {
   await dbConnect()
   const user = await User.findById(userId).lean()
-  //const user = (await User.findById(userId)).toObject({flattenMaps:true})
   console.log(user.vocabularyList)
   if (!user) return null
   return JSON.parse(JSON.stringify(user.vocabularyList))
