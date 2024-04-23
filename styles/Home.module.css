@@ -292,10 +292,13 @@
   }
 
   .homeButtons,
-  .vocabButtons,
-  .wordButton {
+  .vocabButtons {
     padding: .2rem;
     width: 120px;
+  }
+
+  .wordButton {
+    padding: .25rem;
   }
 
   .homeButtonsDash {
@@ -558,22 +561,5 @@
 
   .alertMessage {
     max-width: 220px;
-  }
-}
-
-
-@media (prefers-color-scheme: dark) {
-
-  .card,
-  .footer {
-    border-color: #222;
-  }
-
-  .code {
-    background: #111;
-  }
-
-  .logo img {
-    filter: invert(1);
   }
 }
