@@ -279,7 +279,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 435px) {
 
   .appDescription,
   .searchDescription {
@@ -313,7 +313,9 @@
   }
 
   .vocabDescription {
-    font-size: .9rem;
+    font-size: 1rem;
+    max-width: 320px;
+    text-align: center;
   }
 
   .homePageImg {
@@ -323,6 +325,10 @@
   .welcomeTitle,
   .welcomeTitleDash {
     font-size: 2rem;
+  }
+
+  .mainLogin {
+    min-height: 90vh;
   }
 
   .motto {
@@ -337,21 +343,42 @@
   .loginTitle {
     font-size: 2rem;
   }
+
+  .loginTitle {
+    margin-top: -70px;
+  }
+
+  .searchPage {
+    min-height: 85vh;
+  }
+
+  .title {
+    margin-top: -20px;
+  }
+
+  .homePage {
+    margin-bottom: -25px;
+  }
+
+  .footer {
+    padding: 20px;
+  }
+
 }
 
-@media (max-width: 370px) {
+@media (max-width: 375px) {
 
-  .appDescription,
-  .searchDescription {
-    max-width: 280px;
+  .appDescription {
+    max-width: 300px;
     font-size: .9rem;
   }
 
   .searchPage {
-    min-height: 80vh;
+    min-height: 85vh;
   }
 
   .vocabDescription {
+    font-size: .9rem;
     max-width: 270px;
     text-align: center;
   }
@@ -362,19 +389,15 @@
   }
 
   .mainLogin {
-    padding-top: -100px;
+    min-height: 85vh;
   }
 
   .homeButtons {
     width: 100px;
   }
 
-  .vocabDescription {
-    font-size: .8rem;
-  }
-
   .loginTitle {
-    margin-top: -150px;
+    margin-top: -70px;
   }
 
   .homePageImg {
@@ -382,7 +405,9 @@
   }
 
   .searchDescription {
-    font-size: .75rem;
+    font-size: .9rem;
+    max-width: 270px;
+    text-align: center;
   }
 
   .alertMessage {
@@ -428,6 +453,12 @@
     font-size: .8rem;
     max-width: 220px;
   }
+
+  .appDescription {
+    max-width: 280px;
+    font-size: .9rem;
+  }
+
 }
 
 @media (max-width: 300px) {
