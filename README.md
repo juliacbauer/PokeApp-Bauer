@@ -6,6 +6,8 @@ Prose Pal is a word search app created with Next.js, deployed on Vercel, and tha
 
 Users can sign up and create an account to begin searching for words. From there, they can add words to their Vocabulary List to save them to reference later. They can also delete words from their Vocabulary Lists if they no longer need them saved.
 
+Click the link to visit the app! https://prose-pal-julia-bauer-k35tkiu4d-julias-projects-a6dbb758.vercel.app/
+
 <img width="800" alt="Screenshot 2024-04-22 at 5 22 36 PM" src="https://github.com/juliacbauer/ProsePal-Bauer/assets/122422145/74bea7c4-a9bf-4716-b0eb-0239d3c7b768">
 
 
